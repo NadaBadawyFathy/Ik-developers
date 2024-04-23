@@ -68,7 +68,11 @@ body{
     font-family: "Inspiration", cursive;
     font-weight: 400;
     font-style: normal;
-    color: #5E35B1;
+    background-image: linear-gradient(to right, #f313db, #5E35B1);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .header .container .box {
     display: flex;
