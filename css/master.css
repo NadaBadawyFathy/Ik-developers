@@ -305,6 +305,7 @@ body{
 .services .container .box.active {
     margin-top: 50px;
     border: 2px solid #f313db;
+    transition: .3s;
 }
 .services .container .box .img {
     width: 45px;
@@ -470,6 +471,9 @@ body{
     font-weight: normal;
     padding: 25px 0 0;
 }
+.leading .container .work h1:last-child {
+    font-family: 'Playpen Sans', cursive;
+}
 @media (max-width: 1108px) {
     .leading .container .work h1 {
         font-size: 25px;
@@ -489,10 +493,12 @@ body{
     align-items: center;
     border-radius: 50%;
     color: #5E35B1;
+    cursor: pointer;
 }
-.leading .container .arrows i:last-of-type {
+.leading .container .arrows i.active {
     background-color: #5E35B1;
     color: white;
+    transition: .2s;
 }
 
 /* End leading companies */

@@ -38,3 +38,15 @@ li.forEach(function (ele) {
     }
 })
 
+// Arrows
+let i = document.querySelectorAll('.leading .container .arrows i');
+
+i.forEach(function (el) {
+    el.onclick = function () {
+        i.forEach(function (ele) {
+            ele.classList.remove('active');
+        })
+        this.classList.add('active')
+    }
+    console.log('nada')
+})
