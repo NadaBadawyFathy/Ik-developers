@@ -48,5 +48,59 @@ i.forEach(function (el) {
         })
         this.classList.add('active')
     }
-    console.log('nada')
+})
+
+// Cutomers
+
+let bo = document.querySelectorAll('.cutomers .container .box');
+let arr = document.querySelectorAll('.cutomers .container .arr i');
+let index = 0;
+let counter = setInterval(function () {
+    index++;
+    if (index === bo.length) {
+        index = 0;
+    }
+    if (!bo[index].classList.contains('active')){
+        bo.forEach(function (e) {
+            e.classList.remove('active');
+        })
+        bo[index].classList.add('active');
+    }
+}, 3000);
+
+
+arr.forEach(function (e) {
+    // click arrow left or right
+    e.onclick = function (e) {
+        clearInterval(counter)
+        arr.forEach(function (e) {
+            e.classList.remove('active');
+        })
+        this.classList.add('active');
+
+        // arrow right
+        if (this.classList.contains('right')){
+            ++index;
+        if (index === bo.length) {
+            index = 0;
+        }
+        bo.forEach(function (el) {
+            el.classList.remove('active');
+        })
+        bo[index].classList.add('active');
+
+        }
+
+        // arrow left
+        if (this.classList.contains('left')){
+            --index;
+            if (index < 0) {
+                index = bo.length - 1 ;
+            }
+            bo.forEach(function (el) {
+                el.classList.remove('active');
+            })
+            bo[index].classList.add('active');
+        }
+    }
 })
