@@ -17,7 +17,7 @@ menu.onclick = function (){
 
 // services
 
-let li = document.querySelectorAll('.bullets li');
+let li = document.querySelectorAll('.services .bullets li');
 let box = document.querySelectorAll('.services .container .box');
 
 li.forEach(function (ele) {
@@ -28,13 +28,9 @@ li.forEach(function (ele) {
         this.classList.add('active');
         let str = this.classList.item(0);
         box.forEach(function (ele) {
-            if (ele.classList.contains(str)){
-                box.forEach(function (ele) {
-                    ele.classList.remove('active');
-                })
-            ele.classList.add('active');
-            }
+        ele.classList.remove('active');
         })
+        box[+str].classList.add('active')
     }
 })
 
@@ -102,5 +98,42 @@ arr.forEach(function (e) {
             })
             bo[index].classList.add('active');
         }
+    }
+})
+
+// Tech Stack
+let tracks = document.querySelectorAll('.tech-stack .container ul li');
+let imgs = document.querySelectorAll('.tech-stack .container .imgs li');
+
+tracks.forEach(function (e) {
+    e.onclick = function (e) {
+        tracks.forEach(function (e) {
+            e.classList.remove('active');
+        })
+        this.classList.add('active')
+        let str = this.classList.item(0);
+        imgs.forEach(function (ele) {
+        ele.classList.remove('active');
+        })
+        imgs[+str].classList.add('active')
+    }
+})
+
+// Features
+
+let bul = document.querySelectorAll('.features .bullets li');
+let feat = document.querySelectorAll('.features .container .box');
+
+bul.forEach(function (ele) {
+    ele.onclick = function () {
+        bul.forEach(function (ele) {
+            ele.classList.remove('active');
+        })
+        this.classList.add('active');
+        let str = this.classList.item(0);
+        feat.forEach(function (ele) {
+        ele.classList.remove('active');
+        })
+        feat[+str].classList.add('active')
     }
 })
